@@ -1,4 +1,4 @@
-package com.example.flashcards
+package com.example.flashcards.UI
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.example.flashcards.R
 import com.example.flashcards.databinding.FragmentMainScreenBinding
 
 class MainScreenFragment : Fragment() {
@@ -23,6 +24,10 @@ class MainScreenFragment : Fragment() {
         binding.library.setOnClickListener {
             requireView().findNavController()
                 .navigate(R.id.action_mainScreenFragment_to_dictionaryFragment)
+        }
+        binding.play.setOnClickListener {
+            requireView().findNavController()
+                .navigate(R.id.action_mainScreenFragment_to_gameFragment)
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.example.flashcards.Data
 
-data class WordData (
+data class WordData(
     val engWord: String,
     val rusWord: String
 )

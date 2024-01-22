@@ -1,4 +1,4 @@
-package com.example.flashcards
+package com.example.flashcards.UI
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.flashcards.Data.WordData
+import com.example.flashcards.Adapter.DictionaryRecyclerViewAdapter
+import com.example.flashcards.R
+import com.example.flashcards.ViewModel.MainActivityViewModel
 import com.example.flashcards.databinding.FragmentDictionaryBinding
 
 class DictionaryFragment : Fragment() {
@@ -16,7 +18,7 @@ class DictionaryFragment : Fragment() {
 
     private val recyclerViewAdapter by lazy { DictionaryRecyclerViewAdapter() }
     private lateinit var binding: FragmentDictionaryBinding
-    private val mainActivityViewModel:MainActivityViewModel by activityViewModels()
+    private val mainActivityViewModel: MainActivityViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?

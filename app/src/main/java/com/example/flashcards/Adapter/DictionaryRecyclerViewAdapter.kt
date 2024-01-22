@@ -1,4 +1,4 @@
-package com.example.flashcards
+package com.example.flashcards.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.flashcards.Data.WordData
 import com.example.flashcards.databinding.ItemDictionaryBinding
 
-class DictionaryRecyclerViewAdapter() : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class DictionaryRecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private lateinit var binding: ItemDictionaryBinding
 
     class ItemViewHolder(private val binding: ItemDictionaryBinding) :

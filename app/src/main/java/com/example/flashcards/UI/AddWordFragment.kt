@@ -1,4 +1,4 @@
-package com.example.flashcards
+package com.example.flashcards.UI
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.example.flashcards.Data.WordData
+import com.example.flashcards.R
+import com.example.flashcards.ViewModel.MainActivityViewModel
 import com.example.flashcards.databinding.FragmentAddWordBinding
 
 
@@ -28,7 +30,12 @@ class AddWordFragment : Fragment() {
                 .navigate(R.id.action_addWordFragment_to_dictionaryFragment)
         }
         binding.addWord.setOnClickListener {
-            mainActivityViewModel.addWord(WordData(binding.engWord.text.toString(), binding.rusWord.text.toString()))
+            mainActivityViewModel.addWord(
+                WordData(
+                    binding.engWord.text.toString(),
+                    binding.rusWord.text.toString()
+                )
+            )
             requireView().findNavController()
                 .navigate(R.id.action_addWordFragment_to_dictionaryFragment)
         }

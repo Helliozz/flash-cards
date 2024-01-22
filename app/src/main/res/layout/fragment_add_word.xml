@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#23282E"
-    tools:context=".AddWordFragment">
+    tools:context=".UI.AddWordFragment">
 
     <ImageView
         android:id="@+id/back"

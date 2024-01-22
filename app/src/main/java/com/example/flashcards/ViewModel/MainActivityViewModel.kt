@@ -1,10 +1,9 @@
-package com.example.flashcards
+package com.example.flashcards.ViewModel
 
 import androidx.lifecycle.ViewModel
 import com.example.flashcards.Data.WordData
-import java.nio.file.WatchEvent
 
-class MainActivityViewModel:ViewModel() {
+class MainActivityViewModel : ViewModel() {
     private var arr: MutableList<WordData> = mutableListOf(
         WordData("English", "Английский"),
         WordData("Beer", "Пиво"),
@@ -16,10 +15,12 @@ class MainActivityViewModel:ViewModel() {
         WordData("Button", "Кнопка"),
         WordData("Anonymous", "Анонимный")
     )
-    fun getWords():MutableList<WordData>{
+
+    fun getWords(): MutableList<WordData> {
         return arr
     }
-    fun addWord(word: WordData){
+
+    fun addWord(word: WordData) {
         arr.add(word)
     }
 }
