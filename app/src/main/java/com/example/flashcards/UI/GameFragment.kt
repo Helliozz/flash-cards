@@ -12,12 +12,16 @@ import com.example.flashcards.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {
 
+    private var score = 100
     private lateinit var binding: FragmentGameBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = FragmentGameBinding.inflate(inflater, container, false)
+        binding.score.text = score.toString()
+        binding.right.isEnabled = false
+        binding.wrong.isEnabled = false
         return binding.root
     }
 
@@ -28,14 +32,21 @@ class GameFragment : Fragment() {
         }
         binding.wordCard.setOnClickListener {
             binding.rusWord.isVisible = true
+            binding.right.isEnabled = true
+            binding.wrong.isEnabled = true
         }
+
         binding.right.setOnClickListener {
             binding.wordCard.isVisible = false
-            binding.score.text = "101"
+            score++
+            binding.score.text = score.toString()
+            binding.right.isEnabled = false
+            binding.wrong.isEnabled = false
         }
         binding.wrong.setOnClickListener {
             binding.wordCard.isVisible = false
-            binding.score.text = "101"
+            binding.right.isEnabled = false
+            binding.wrong.isEnabled = false
         }
     }
 
