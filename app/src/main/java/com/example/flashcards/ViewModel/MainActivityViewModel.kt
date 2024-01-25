@@ -15,12 +15,26 @@ class MainActivityViewModel : ViewModel() {
         WordData("Button", "Кнопка"),
         WordData("Anonymous", "Анонимный")
     )
-
+    private var sessionScore = 0
     fun getWords(): MutableList<WordData> {
         return arr
     }
 
     fun addWord(word: WordData) {
         arr.add(word)
+    }
+
+    fun setWord(words: List<WordData>, id: Int, size: Int): WordData? {
+        return if (id < size) {
+            words[id]
+        } else {
+            null
+        }
+    }
+    fun getSessionScore():Int{
+        return sessionScore
+    }
+    fun addSessionScore(score: Int){
+        sessionScore+=score
     }
 }
