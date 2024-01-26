@@ -20,6 +20,10 @@ class MainActivityViewModel : ViewModel() {
         return arr
     }
 
+    fun deleteWord(elem: WordData) {
+        arr.remove(elem)
+    }
+
     fun addWord(word: WordData) {
         arr.add(word)
     }
@@ -31,10 +35,13 @@ class MainActivityViewModel : ViewModel() {
             null
         }
     }
-    fun getSessionScore():Int{
+
+    fun getSessionScore(): Int {
         return sessionScore
     }
-    fun addSessionScore(score: Int){
-        sessionScore+=score
+
+    fun addSessionScore(score: Int) {
+        sessionScore += score
     }
+
 }

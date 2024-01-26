@@ -1,6 +1,7 @@
 package com.example.flashcards.UI
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.flashcards.Adapter.DictionaryRecyclerViewAdapter
+import com.example.flashcards.Data.WordData
 import com.example.flashcards.R
 import com.example.flashcards.ViewModel.MainActivityViewModel
 import com.example.flashcards.databinding.FragmentDictionaryBinding
@@ -16,7 +18,9 @@ import com.example.flashcards.databinding.FragmentDictionaryBinding
 class DictionaryFragment : Fragment() {
 
 
-    private val recyclerViewAdapter by lazy { DictionaryRecyclerViewAdapter() }
+    private lateinit var deleteWord: (WordData) -> Unit
+
+    private val recyclerViewAdapter by lazy { DictionaryRecyclerViewAdapter(deleteWord) }
     private lateinit var binding: FragmentDictionaryBinding
     private val mainActivityViewModel: MainActivityViewModel by activityViewModels()
 
@@ -28,6 +32,11 @@ class DictionaryFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        deleteWord={
+            recyclerViewAdapter.notifyItemRemoved(mainActivityViewModel.getWords().indexOf(it))
+            mainActivityViewModel.deleteWord(it)
+        }
+
         binding.addWord.setOnClickListener {
             requireView().findNavController()
                 .navigate(R.id.action_dictionaryFragment_to_addWordFragment)
