@@ -19,7 +19,7 @@ class GameFragment : Fragment() {
     private var id = 0
     private lateinit var binding: FragmentGameBinding
     private val mainActivityViewModel: MainActivityViewModel by activityViewModels()
-    private lateinit var words: List<WordData>
+    private lateinit var words: MutableList<WordData>
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -27,7 +27,7 @@ class GameFragment : Fragment() {
         binding.score.text = score.toString()
         binding.right.isEnabled = false
         binding.wrong.isEnabled = false
-        words = mainActivityViewModel.getWords().shuffled()
+        words = mainActivityViewModel.getWords().shuffled().toMutableList()
         binding.engWord.text = mainActivityViewModel.setWord(words, id, words.size)?.engWord
         binding.rusWord.text = mainActivityViewModel.setWord(words, id, words.size)?.rusWord
         return binding.root
@@ -35,6 +35,9 @@ class GameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.back.setOnClickListener {
+            if (mainActivityViewModel.setWord(words, id, words.size) != null) {
+                mainActivityViewModel.addSessionScore(score)
+            }
             requireView().findNavController()
                 .navigate(R.id.action_gameFragment_to_mainScreenFragment)
         }
@@ -50,6 +53,7 @@ class GameFragment : Fragment() {
             checkStatus()
         }
         binding.wrong.setOnClickListener {
+            words.add(mainActivityViewModel.setWord(words, id, words.size)!!)
             checkStatus()
         }
     }
