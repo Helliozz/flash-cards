@@ -4,16 +4,17 @@ import androidx.lifecycle.ViewModel
 import com.example.flashcards.Data.WordData
 
 class MainActivityViewModel : ViewModel() {
+
     private var arr: MutableList<WordData> = mutableListOf(
-        WordData("English", "Английский"),
-        WordData("Beer", "Пиво"),
-        WordData("Data", "дата"),
-        WordData("Add", "Добавить"),
-        WordData("Game", "Игра"),
-        WordData("Dictionary", "Словарь"),
-        WordData("Fragment", "Фрагмент"),
-        WordData("Button", "Кнопка"),
-        WordData("Anonymous", "Анонимный")
+        WordData(0, "English", "Английский"),
+        WordData(1, "Beer", "Пиво"),
+        WordData(2, "Data", "дата"),
+        WordData(3, "Add", "Добавить"),
+        WordData(4, "Game", "Игра"),
+        WordData(5, "Dictionary", "Словарь"),
+        WordData(6, "Fragment", "Фрагмент"),
+        WordData(7, "Button", "Кнопка"),
+        WordData(8, "Anonymous", "Анонимный")
     )
     private var sessionScore = 0
     fun getWords(): MutableList<WordData> {

@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.flashcards.Data.WordData
+import com.example.flashcards.Data.Word
 import com.example.flashcards.databinding.ItemDictionaryBinding
 
 class DictionaryRecyclerViewAdapter(
-    val deleteWord: (WordData) -> Unit
+    val deleteWord: (Word) -> Unit
 
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private lateinit var binding: ItemDictionaryBinding
@@ -21,7 +21,7 @@ class DictionaryRecyclerViewAdapter(
         private val binding: ItemDictionaryBinding,
         private val recycler: DictionaryRecyclerViewAdapter
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun setWords(item: WordData) {
+        fun setWords(item: Word) {
             binding.apply {
                 engWord.text = item.engWord
                 rusWord.text = item.rusWord
@@ -51,15 +51,15 @@ class DictionaryRecyclerViewAdapter(
         holder.setIsRecyclable(false)
     }
 
-    private val differCallback = object : DiffUtil.ItemCallback<WordData>() {
-        override fun areContentsTheSame(oldItem: WordData, newItem: WordData): Boolean {
+    private val differCallback = object : DiffUtil.ItemCallback<Word>() {
+        override fun areContentsTheSame(oldItem: Word, newItem: Word): Boolean {
             return oldItem.engWord == newItem.engWord && oldItem.rusWord == newItem.rusWord
 
         }
 
         @SuppressLint("DiffUtilEquals")
-        override fun areItemsTheSame(oldItem: WordData, newItem: WordData): Boolean {
-            return oldItem == newItem
+        override fun areItemsTheSame(oldItem: Word, newItem: Word): Boolean {
+            return oldItem.id == newItem.id
         }
     }
     val differ = AsyncListDiffer(this, differCallback)

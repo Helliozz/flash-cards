@@ -46,11 +46,11 @@
         android:id="@+id/gameFragment"
         android:name="com.example.flashcards.UI.GameFragment"
         android:label="fragment_game"
-        tools:layout="@layout/fragment_game" >
+        tools:layout="@layout/fragment_game">
         <action
-            app:popUpToInclusive="true"
-            app:popUpTo="@id/mainScreenFragment"
             android:id="@+id/action_gameFragment_to_mainScreenFragment"
-            app:destination="@id/mainScreenFragment" />
+            app:destination="@id/mainScreenFragment"
+            app:popUpTo="@id/mainScreenFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
