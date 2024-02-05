@@ -18,5 +18,5 @@ class Word(
     @ColumnInfo(name = "eng_word") val engWord: String,
     @ColumnInfo(name = "rus_word") val rusWord: String,
     @ColumnInfo(name = "count_of_learning") var countOfLearning: Int,
-    @ColumnInfo(name = "it_was_learning_today") var itWasLearningToday: Boolean
+    @ColumnInfo(name = "date_of_last_learning") var dateOfLastLearning: Long
 )

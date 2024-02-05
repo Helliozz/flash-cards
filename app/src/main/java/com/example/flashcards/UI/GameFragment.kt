@@ -7,19 +7,28 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
-import com.example.flashcards.Data.WordData
+import com.example.flashcards.Data.Word
 import com.example.flashcards.R
+import com.example.flashcards.ViewModel.DictionaryViewModel
+import com.example.flashcards.ViewModel.DictionaryViewModelFactory
 import com.example.flashcards.ViewModel.MainActivityViewModel
+import com.example.flashcards.WordsApplication
 import com.example.flashcards.databinding.FragmentGameBinding
+import java.util.*
 
 class GameFragment : Fragment() {
 
     private var score = 0
     private var id = 0
-    private lateinit var binding: FragmentGameBinding
+    private val dictionaryViewModel: DictionaryViewModel by viewModels {
+        DictionaryViewModelFactory((activity!!.application as WordsApplication).repository)
+    }
     private val mainActivityViewModel: MainActivityViewModel by activityViewModels()
-    private lateinit var words: MutableList<WordData>
+    private lateinit var binding: FragmentGameBinding
+    private lateinit var words: MutableList<Word>
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -27,9 +36,19 @@ class GameFragment : Fragment() {
         binding.score.text = score.toString()
         binding.right.isEnabled = false
         binding.wrong.isEnabled = false
-        words = mainActivityViewModel.getWords().shuffled().toMutableList()
-        binding.engWord.text = mainActivityViewModel.setWord(words, id, words.size)?.engWord
-        binding.rusWord.text = mainActivityViewModel.setWord(words, id, words.size)?.rusWord
+
+        dictionaryViewModel.words.observe(activity!!) { words ->
+            this.words = words.shuffled().toMutableList()
+            binding.engWord.text =
+                mainActivityViewModel.setWord(this.words, id, this.words.size)?.engWord
+            binding.rusWord.text =
+                mainActivityViewModel.setWord(this.words, id, this.words.size)?.rusWord
+
+            dictionaryViewModel.words.removeObservers(activity!!)
+        }
+
+
+
         return binding.root
     }
 
@@ -50,6 +69,8 @@ class GameFragment : Fragment() {
         binding.right.setOnClickListener {
             score++
             binding.score.text = score.toString()
+            dictionaryViewModel.update(mainActivityViewModel.setWord(words, id, words.size)!!
+                .also { it.dateOfLastLearning = Calendar.getInstance().timeInMillis }.also { it.countOfLearning++ })
             checkStatus()
         }
         binding.wrong.setOnClickListener {
@@ -70,5 +91,10 @@ class GameFragment : Fragment() {
             binding.rusWord.text = mainActivityViewModel.setWord(words, id, words.size)?.rusWord
             binding.engWord.text = mainActivityViewModel.setWord(words, id, words.size)?.engWord
         }
+    }
+
+    override fun onDestroy() {
+        dictionaryViewModel.words.removeObservers(activity!!)
+        super.onDestroy()
     }
 }

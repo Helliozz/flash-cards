@@ -17,12 +17,30 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/learn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="10dp"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+        <TextView
             android:id="@+id/eng_word"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:text="beer"
+            android:text="table"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
 
@@ -32,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="45dp"
-            android:text="пиво"
+            android:text="стол"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 

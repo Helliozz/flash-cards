@@ -1,7 +1,6 @@
 package com.example.flashcards.Adapter
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flashcards.Data.Word
 import com.example.flashcards.databinding.ItemDictionaryBinding
+import java.util.*
 
 class DictionaryRecyclerViewAdapter(
     val deleteWord: (Word) -> Unit
@@ -22,9 +22,21 @@ class DictionaryRecyclerViewAdapter(
         private val recycler: DictionaryRecyclerViewAdapter
     ) : RecyclerView.ViewHolder(binding.root) {
         fun setWords(item: Word) {
+
             binding.apply {
                 engWord.text = item.engWord
                 rusWord.text = item.rusWord
+
+                val mCal = Calendar.getInstance()
+                mCal.timeInMillis = item.dateOfLastLearning
+                count.text = "${mCal.get(Calendar.DATE)}.${mCal.get(Calendar.MONTH) + 1}.${
+                    mCal.get(
+                        Calendar.YEAR
+                    )
+                }\n${
+                    mCal.get(Calendar.HOUR)
+                }:${mCal.get(Calendar.MINUTE)}:${mCal.get(Calendar.MILLISECOND)}"
+                learn.text = item.countOfLearning.toString()
 
                 delete.setOnClickListener {
                     recycler.deleteWord(item)
@@ -33,8 +45,6 @@ class DictionaryRecyclerViewAdapter(
                 }
             }
         }
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

@@ -54,16 +54,20 @@ class DictionaryFragment : Fragment() {
                 .navigate(R.id.action_dictionaryFragment_to_mainScreenFragment)
         }
 
-        dictionaryViewModel.words.observe(activity!!){words->
+        dictionaryViewModel.activeWords.observe(activity!!){words->
             words.let { recyclerViewAdapter.differ.submitList(it)
             }
         }
 
-        recyclerViewAdapter.differ.submitList(dictionaryViewModel.words.value)
+        recyclerViewAdapter.differ.submitList(dictionaryViewModel.activeWords.value)
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = recyclerViewAdapter
         }
     }
 
+    override fun onDestroy() {
+        dictionaryViewModel.words.removeObservers(activity!!)
+        super.onDestroy()
+    }
 }

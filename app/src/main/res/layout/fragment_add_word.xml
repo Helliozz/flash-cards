@@ -74,7 +74,7 @@
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:backgroundTint="#FFFFFF"
-        android:hint="name"
+        android:hint="название"
         android:textColorHint="#FFFFFF"
         android:textColor="#FFFFFF"
         android:textSize="24dp"

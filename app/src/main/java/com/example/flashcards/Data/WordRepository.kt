@@ -1,23 +1,27 @@
 package com.example.flashcards.Data
 
-import android.util.Log
 import androidx.annotation.WorkerThread
-import androidx.lifecycle.asLiveData
 import kotlinx.coroutines.flow.Flow
 
 class WordRepository(private val wordDao: WordDao) {
 
     val allWords: Flow<List<Word>> = wordDao.getAll()
 
+    val activeWords: Flow<List<Word>> = wordDao.getActiveWords()
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
-    suspend fun insert (word:Word){
-        Log.d("TRASH", "allWords is null = ${allWords.asLiveData().value == null}")
+    suspend fun insert(word: Word) {
         wordDao.insertWord(word)
     }
+
     @WorkerThread
-    suspend fun delete(word: Word){
+    suspend fun update(word: Word) {
+        wordDao.update(word)
+    }
+
+    @WorkerThread
+    suspend fun delete(word: Word) {
         wordDao.delete(word)
     }
 

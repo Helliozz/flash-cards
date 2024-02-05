@@ -25,66 +25,76 @@ public abstract class WordRoomDatabase : RoomDatabase() {
             wordDao.deleteAll()
             wordDao.insertWord(
                 Word(
-                    engWord = "Dick",
-                    rusWord = "Член",
+                    engWord = "Table",
+                    rusWord = "Стол",
                     countOfLearning = 0,
-                    itWasLearningToday = false
+                    dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Member",
-                    rusWord = "Член",
+                    engWord = "Chair",
+                    rusWord = "Стул",
                     countOfLearning = 0,
-                    itWasLearningToday = false
+                    dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Penis",
-                    rusWord = "Член",
+                    engWord = "Book",
+                    rusWord = "Книга",
                     countOfLearning = 0,
-                    itWasLearningToday = false
+                    dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Cock",
-                    rusWord = "Член",
+                    engWord = "Window",
+                    rusWord = "Окно",
                     countOfLearning = 0,
-                    itWasLearningToday = false
+                    dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Tool",
-                    rusWord = "Член",
+                    engWord = "Door",
+                    rusWord = "Дверь",
                     countOfLearning = 0,
-                    itWasLearningToday = false
+                    dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Organ",
-                    rusWord = "Член",
+                    engWord = "Computer",
+                    rusWord = "Компьютер",
                     countOfLearning = 0,
-                    itWasLearningToday = false
+                    dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Prick",
-                    rusWord = "Член",
+                    engWord = "Phone",
+                    rusWord = "Телефон",
                     countOfLearning = 0,
-                    itWasLearningToday = false
+                    dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Willy",
-                    rusWord = "Член",
+                    engWord = "Pen", rusWord = "Ручка", countOfLearning = 0, dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "Pencil",
+                    rusWord = "Карандаш",
                     countOfLearning = 0,
-                    itWasLearningToday = false
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "Bag", rusWord = "Сумка", countOfLearning = 0, dateOfLastLearning = 0L
                 )
             )
         }

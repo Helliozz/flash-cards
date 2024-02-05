@@ -1,7 +1,6 @@
 package com.example.flashcards.UI
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +16,7 @@ import com.example.flashcards.ViewModel.DictionaryViewModelFactory
 import com.example.flashcards.ViewModel.MainActivityViewModel
 import com.example.flashcards.WordsApplication
 import com.example.flashcards.databinding.FragmentAddWordBinding
+import java.util.Calendar
 
 
 class AddWordFragment : Fragment() {
@@ -29,8 +29,6 @@ class AddWordFragment : Fragment() {
         )
     }
 
-
-    private val mainActivityViewModel: MainActivityViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
@@ -51,16 +49,9 @@ class AddWordFragment : Fragment() {
                 engWord = binding.engWord.text.toString(),
                 rusWord = binding.rusWord.text.toString(),
                 countOfLearning = 0,
-                itWasLearningToday = false
+                dateOfLastLearning = Calendar.getInstance().timeInMillis
             )
             dictionaryViewModel.insert(word)
-
-            mainActivityViewModel.addWord(
-                WordData(
-                    id = 0, binding.engWord.text.toString(), binding.rusWord.text.toString()
-                )
-            )
-
 
             requireView().findNavController()
                 .navigate(R.id.action_addWordFragment_to_dictionaryFragment)
