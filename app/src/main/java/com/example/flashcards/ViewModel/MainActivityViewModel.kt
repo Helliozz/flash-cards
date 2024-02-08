@@ -16,12 +16,4 @@ class MainActivityViewModel : ViewModel() {
             null
         }
     }
-
-    fun getSessionScore(): Int {
-        return sessionScore
-    }
-
-    fun addSessionScore(score: Int) {
-        sessionScore += score
-    }
 }

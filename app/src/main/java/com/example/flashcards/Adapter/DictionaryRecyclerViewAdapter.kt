@@ -29,14 +29,6 @@ class DictionaryRecyclerViewAdapter(
 
                 val mCal = Calendar.getInstance()
                 mCal.timeInMillis = item.dateOfLastLearning
-                count.text = "${mCal.get(Calendar.DATE)}.${mCal.get(Calendar.MONTH) + 1}.${
-                    mCal.get(
-                        Calendar.YEAR
-                    )
-                }\n${
-                    mCal.get(Calendar.HOUR)
-                }:${mCal.get(Calendar.MINUTE)}:${mCal.get(Calendar.MILLISECOND)}"
-                learn.text = item.countOfLearning.toString()
 
                 delete.setOnClickListener {
                     recycler.deleteWord(item)

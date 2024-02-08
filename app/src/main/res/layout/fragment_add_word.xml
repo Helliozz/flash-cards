@@ -47,9 +47,10 @@
     <EditText
         android:id="@+id/eng_word"
         android:layout_width="350dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:backgroundTint="#FFFFFF"
         android:hint="name"
+        android:minHeight="60dp"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="24dp"
@@ -72,9 +73,10 @@
     <EditText
         android:id="@+id/rus_word"
         android:layout_width="350dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:backgroundTint="#FFFFFF"
         android:hint="название"
+        android:minHeight="60dp"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textSize="24dp"

@@ -7,63 +7,59 @@
     <androidx.cardview.widget.CardView
 
         android:layout_width="350dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:backgroundTint="#393D42"
+        android:minHeight="80dp"
         app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/learn"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="150dp"
-            android:layout_marginTop="10dp"
-            android:text="0"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/count"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="10dp"
-            android:text="0"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            <TextView
+                android:id="@+id/eng_word"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="table"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/eng_word"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:text="table"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            <TextView
+                android:id="@+id/rus_word"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="стол"
+                android:layout_marginTop="2dp"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/eng_word" />
 
-        <TextView
-            android:id="@+id/rus_word"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="45dp"
-            android:text="стол"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/icon_trash_can"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="#FFFFFF" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageView
-            android:id="@+id/delete"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="290dp"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/icon_trash_can"
-            app:tint="#FFFFFF" />
+
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

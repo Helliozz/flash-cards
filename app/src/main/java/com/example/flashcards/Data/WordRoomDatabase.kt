@@ -41,14 +41,6 @@ abstract class WordRoomDatabase : RoomDatabase() {
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "book",
-                    rusWord = "книга",
-                    countOfLearning = 0,
-                    dateOfLastLearning = 0L
-                )
-            )
-            wordDao.insertWord(
-                Word(
                     engWord = "window",
                     rusWord = "окно",
                     countOfLearning = 0,
@@ -95,6 +87,209 @@ abstract class WordRoomDatabase : RoomDatabase() {
             wordDao.insertWord(
                 Word(
                     engWord = "bag", rusWord = "сумка", countOfLearning = 0, dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "apple",
+                    rusWord = "яблоко",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "car",
+                    rusWord = "автомобиль",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "sun",
+                    rusWord = "солнце",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "moon", rusWord = "луна", countOfLearning = 0, dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "star",
+                    rusWord = "звезда",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "book",
+                    rusWord = "книга",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "dog",
+                    rusWord = "собака",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "cat", rusWord = "кот", countOfLearning = 0, dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "mouse",
+                    rusWord = "мышь",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "bird",
+                    rusWord = "птица",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "fish", rusWord = "рыба", countOfLearning = 0, dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "tree",
+                    rusWord = "дерево",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "flower",
+                    rusWord = "цветок",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "river",
+                    rusWord = "река",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "sea", rusWord = "море", countOfLearning = 0, dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "ocean",
+                    rusWord = "океан",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "mountain",
+                    rusWord = "гора",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "hill", rusWord = "холм", countOfLearning = 0, dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "valley",
+                    rusWord = "долина",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "desert",
+                    rusWord = "пустыня",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "forest",
+                    rusWord = "лес",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "sky", rusWord = "небо", countOfLearning = 0, dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "cloud",
+                    rusWord = "облако",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "rain",
+                    rusWord = "дождь",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "snow", rusWord = "снег", countOfLearning = 0, dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "wind",
+                    rusWord = "ветер",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "storm",
+                    rusWord = "буря",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
+                )
+            )
+            wordDao.insertWord(
+                Word(
+                    engWord = "thunder",
+                    rusWord = "гром",
+                    countOfLearning = 0,
+                    dateOfLastLearning = 0L
                 )
             )
         }

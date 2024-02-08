@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginTop="100dp"
-            android:text="Пройдено сейчас"
+            android:text="Пройдено сегодня"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
     </androidx.cardview.widget.CardView>
