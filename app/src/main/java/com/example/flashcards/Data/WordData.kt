@@ -4,14 +4,6 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-data class WordData(
-    val id: Int,
-    val engWord: String,
-    val rusWord: String,
-    var countOfLearning: Int = 0,
-    var itWasLearningToday: Boolean = false
-)
-
 @Entity(tableName = "word_table")
 class Word(
     @PrimaryKey(autoGenerate = true) var id: Int = 0,

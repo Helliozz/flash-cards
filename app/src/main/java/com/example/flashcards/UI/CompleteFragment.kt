@@ -14,12 +14,12 @@ import com.example.flashcards.R
 import com.example.flashcards.ViewModel.DictionaryViewModel
 import com.example.flashcards.ViewModel.DictionaryViewModelFactory
 import com.example.flashcards.WordsApplication
-import com.example.flashcards.databinding.FragmentDictionaryBinding
+import com.example.flashcards.databinding.FragmentCompleteBinding
 
-class DictionaryFragment : Fragment() {
+class CompleteFragment : Fragment() {
     private lateinit var deleteWord: (Word) -> Unit
     private val recyclerViewAdapter by lazy { DictionaryRecyclerViewAdapter(deleteWord) }
-    private lateinit var binding: FragmentDictionaryBinding
+    private lateinit var binding: FragmentCompleteBinding
     private val dictionaryViewModel: DictionaryViewModel by viewModels {
         DictionaryViewModelFactory(
             (activity!!.application as WordsApplication).repository
@@ -29,7 +29,7 @@ class DictionaryFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        binding = FragmentDictionaryBinding.inflate(inflater, container, false)
+        binding = FragmentCompleteBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -38,22 +38,18 @@ class DictionaryFragment : Fragment() {
             dictionaryViewModel.delete(it)
         }
 
-        binding.addWord.setOnClickListener {
-            requireView().findNavController()
-                .navigate(R.id.action_dictionaryFragment_to_addWordFragment)
-        }
         binding.back.setOnClickListener {
             requireView().findNavController()
-                .navigate(R.id.action_dictionaryFragment_to_mainScreenFragment)
+                .navigate(R.id.action_completeFragment_to_mainScreenFragment)
         }
 
-        dictionaryViewModel.activeWords.observe(activity!!) { words ->
+        dictionaryViewModel.disableWords.observe(activity!!) { words ->
             words.let {
                 recyclerViewAdapter.differ.submitList(it)
             }
         }
 
-        recyclerViewAdapter.differ.submitList(dictionaryViewModel.activeWords.value)
+        recyclerViewAdapter.differ.submitList(dictionaryViewModel.disableWords.value)
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = recyclerViewAdapter
@@ -61,7 +57,7 @@ class DictionaryFragment : Fragment() {
     }
 
     override fun onDestroy() {
-        dictionaryViewModel.activeWords.removeObservers(activity!!)
+        dictionaryViewModel.disableWords.removeObservers(activity!!)
         super.onDestroy()
     }
 }

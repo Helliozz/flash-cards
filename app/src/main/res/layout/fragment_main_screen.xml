@@ -40,7 +40,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view_2"
+        android:id="@+id/complete_words"
         android:layout_width="350dp"
         android:layout_height="150dp"
         android:layout_marginTop="30dp"

@@ -9,13 +9,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @Database(entities = arrayOf(Word::class), version = 1, exportSchema = false)
-public abstract class WordRoomDatabase : RoomDatabase() {
+abstract class WordRoomDatabase : RoomDatabase() {
 
     abstract fun wordDao(): WordDao
 
     private class WordDatabaseCallback(
         private val scope: CoroutineScope
-    ) : RoomDatabase.Callback() {
+    ) : Callback() {
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
             INSTANCE?.let { database -> scope.launch { populateDatabase(database.wordDao()) } }
@@ -25,76 +25,76 @@ public abstract class WordRoomDatabase : RoomDatabase() {
             wordDao.deleteAll()
             wordDao.insertWord(
                 Word(
-                    engWord = "Table",
-                    rusWord = "Стол",
+                    engWord = "table",
+                    rusWord = "стол",
                     countOfLearning = 0,
                     dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Chair",
-                    rusWord = "Стул",
+                    engWord = "chair",
+                    rusWord = "стул",
                     countOfLearning = 0,
                     dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Book",
-                    rusWord = "Книга",
+                    engWord = "book",
+                    rusWord = "книга",
                     countOfLearning = 0,
                     dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Window",
-                    rusWord = "Окно",
+                    engWord = "window",
+                    rusWord = "окно",
                     countOfLearning = 0,
                     dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Door",
-                    rusWord = "Дверь",
+                    engWord = "door",
+                    rusWord = "дверь",
                     countOfLearning = 0,
                     dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Computer",
-                    rusWord = "Компьютер",
+                    engWord = "computer",
+                    rusWord = "компьютер",
                     countOfLearning = 0,
                     dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Phone",
-                    rusWord = "Телефон",
+                    engWord = "phone",
+                    rusWord = "телефон",
                     countOfLearning = 0,
                     dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Pen", rusWord = "Ручка", countOfLearning = 0, dateOfLastLearning = 0L
+                    engWord = "pen", rusWord = "ручка", countOfLearning = 0, dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Pencil",
-                    rusWord = "Карандаш",
+                    engWord = "pencil",
+                    rusWord = "карандаш",
                     countOfLearning = 0,
                     dateOfLastLearning = 0L
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "Bag", rusWord = "Сумка", countOfLearning = 0, dateOfLastLearning = 0L
+                    engWord = "bag", rusWord = "сумка", countOfLearning = 0, dateOfLastLearning = 0L
                 )
             )
         }

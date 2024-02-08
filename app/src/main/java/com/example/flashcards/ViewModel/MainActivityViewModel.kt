@@ -7,8 +7,10 @@ class MainActivityViewModel : ViewModel() {
 
     private var sessionScore = 0
 
-    fun setWord(words: List<Word>, id: Int, size: Int): Word? {
-        return if (id < size) {
+    fun setWord(words: List<Word>, id: Int, size: Int?): Word? {
+        return if (size == null) {
+            null
+        } else if (id < size) {
             words[id]
         } else {
             null
@@ -22,5 +24,4 @@ class MainActivityViewModel : ViewModel() {
     fun addSessionScore(score: Int) {
         sessionScore += score
     }
-
 }

@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_mainScreenFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_completeFragment"
+            app:destination="@id/completeFragment" />
     </fragment>
     <fragment
         android:id="@+id/dictionaryFragment"
@@ -51,6 +54,17 @@
             android:id="@+id/action_gameFragment_to_mainScreenFragment"
             app:destination="@id/mainScreenFragment"
             app:popUpTo="@id/mainScreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/completeFragment"
+        android:name="com.example.flashcards.UI.CompleteFragment"
+        android:label="fragment_complete"
+        tools:layout="@layout/fragment_complete">
+        <action
+            android:id="@+id/action_completeFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment"
+            app:popUpTo="@id/completeFragment"
             app:popUpToInclusive="true" />
     </fragment>
 </navigation>

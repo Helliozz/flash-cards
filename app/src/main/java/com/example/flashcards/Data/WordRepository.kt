@@ -6,8 +6,8 @@ import kotlinx.coroutines.flow.Flow
 class WordRepository(private val wordDao: WordDao) {
 
     val allWords: Flow<List<Word>> = wordDao.getAll()
-
     val activeWords: Flow<List<Word>> = wordDao.getActiveWords()
+    val disableWords: Flow<List<Word>> = wordDao.getDisableWords()
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread

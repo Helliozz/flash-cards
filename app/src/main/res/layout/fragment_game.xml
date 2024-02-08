@@ -113,14 +113,14 @@
 
         <TextView
             android:id="@+id/rus_word"
-            android:visibility="invisible"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_marginTop="40dp"
             android:text="несмотря"
             android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:visibility="invisible" />
     </androidx.cardview.widget.CardView>
 
 
