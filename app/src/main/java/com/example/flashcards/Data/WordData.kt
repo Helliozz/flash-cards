@@ -12,3 +12,10 @@ class Word(
     @ColumnInfo(name = "count_of_learning") var countOfLearning: Int,
     @ColumnInfo(name = "date_of_last_learning") var dateOfLastLearning: Long
 )
+
+@Entity(tableName = "account_table")
+class Account(
+    @PrimaryKey(autoGenerate = true) var id: Int = 0,
+    @ColumnInfo(name = "email") val email: String,
+    @ColumnInfo(name = "password") val password: String
+)

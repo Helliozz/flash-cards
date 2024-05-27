@@ -20,7 +20,7 @@ class AddWordFragment : Fragment() {
 
     private val dictionaryViewModel: DictionaryViewModel by viewModels {
         DictionaryViewModelFactory(
-            (activity!!.application as WordsApplication).repository
+            (activity!!.application as WordsApplication).wordRepository
         )
     }
 

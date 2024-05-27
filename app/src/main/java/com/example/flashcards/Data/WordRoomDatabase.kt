@@ -311,3 +311,36 @@ abstract class WordRoomDatabase : RoomDatabase() {
     }
 }
 
+@Database(entities = arrayOf(Account::class), version = 1, exportSchema = false)
+abstract class AccountRoomDatabase : RoomDatabase() {
+    abstract fun accountDao(): AccountDao
+    private class AccountDatabaseCallback(
+        private val scope: CoroutineScope
+    ) : Callback() {
+        override fun onCreate(db: SupportSQLiteDatabase) {
+            super.onCreate(db)
+            INSTANCE?.let { database -> scope.launch { populateDatabase(database.accountDao()) } }
+        }
+
+        suspend fun populateDatabase(accountDao: AccountDao) {
+            accountDao.deleteAllAccounts()
+        }
+    }
+
+    companion object {
+        @Volatile
+        private var INSTANCE: AccountRoomDatabase? = null
+        fun getDatabase(context: Context, scope: CoroutineScope): AccountRoomDatabase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    AccountRoomDatabase::class.java,
+                    name = "account_database"
+                ).addCallback(AccountDatabaseCallback(scope)).build()
+                INSTANCE = instance
+                instance
+            }
+        }
+    }
+}
+

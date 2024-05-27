@@ -23,7 +23,7 @@ class GameFragment : Fragment() {
     private var score = 0
     private var id = 0
     private val dictionaryViewModel: DictionaryViewModel by viewModels {
-        DictionaryViewModelFactory((activity!!.application as WordsApplication).repository)
+        DictionaryViewModelFactory((activity!!.application as WordsApplication).wordRepository)
     }
     private val mainActivityViewModel: MainActivityViewModel by activityViewModels()
     private lateinit var binding: FragmentGameBinding

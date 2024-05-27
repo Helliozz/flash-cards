@@ -22,7 +22,7 @@ class DictionaryFragment : Fragment() {
     private lateinit var binding: FragmentDictionaryBinding
     private val dictionaryViewModel: DictionaryViewModel by viewModels {
         DictionaryViewModelFactory(
-            (activity!!.application as WordsApplication).repository
+            (activity!!.application as WordsApplication).wordRepository
         )
     }
 

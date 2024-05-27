@@ -18,7 +18,7 @@ class MainScreenFragment : Fragment() {
     private lateinit var binding: FragmentMainScreenBinding
     private val currentDate = Calendar.getInstance()
     private val dictionaryViewModel: DictionaryViewModel by viewModels {
-        DictionaryViewModelFactory((activity!!.application as WordsApplication).repository)
+        DictionaryViewModelFactory((activity!!.application as WordsApplication).wordRepository)
     }
 
     override fun onCreateView(

@@ -24,5 +24,19 @@ class WordRepository(private val wordDao: WordDao) {
     suspend fun delete(word: Word) {
         wordDao.delete(word)
     }
+}
 
+class AccountRepository(private val accountDao: AccountDao) {
+    val account: Flow<List<Account>> = accountDao.getAllAccounts()
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun insertAccount(account: Account) {
+        accountDao.insertAccount(account)
+    }
+
+    @WorkerThread
+    suspend fun deleteAccount(account: Account) {
+        accountDao.deleteAccount(account)
+    }
 }

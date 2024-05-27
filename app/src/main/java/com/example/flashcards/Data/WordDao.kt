@@ -25,6 +25,19 @@ interface WordDao {
 
     @Update
     suspend fun update(word: Word)
+}
 
+@Dao
+interface AccountDao {
+    @Query("SELECT * FROM account_table")
+    fun getAllAccounts(): Flow<List<Account>>
 
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertAccount(vararg account: Account)
+
+    @Delete
+    suspend fun deleteAccount(account: Account)
+
+    @Query("DELETE FROM account_table")
+    suspend fun deleteAllAccounts()
 }
