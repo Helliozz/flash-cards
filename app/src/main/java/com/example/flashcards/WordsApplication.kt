@@ -9,13 +9,11 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 
 class WordsApplication : Application() {
-    val wordApplicationScope = CoroutineScope(SupervisorJob())
-
-    val wordDatabase by lazy { WordRoomDatabase.getDatabase(this, wordApplicationScope) }
+    private val wordApplicationScope = CoroutineScope(SupervisorJob())
+    private val wordDatabase by lazy { WordRoomDatabase.getDatabase(this, wordApplicationScope) }
     val wordRepository by lazy { WordRepository(wordDatabase.wordDao()) }
 
-    val accountApplicationScope = CoroutineScope(SupervisorJob())
-
-    val accountDatabase by lazy { AccountRoomDatabase.getDatabase(this, accountApplicationScope) }
+    private val accountApplicationScope = CoroutineScope(SupervisorJob())
+    private val accountDatabase by lazy { AccountRoomDatabase.getDatabase(this, accountApplicationScope) }
     val accountRepository by lazy { AccountRepository(accountDatabase.accountDao()) }
 }

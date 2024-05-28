@@ -1,5 +1,6 @@
 package com.example.flashcards.ViewModel
 
+import android.util.Log
 import androidx.lifecycle.*
 import com.example.flashcards.Data.Account
 import com.example.flashcards.Data.AccountRepository

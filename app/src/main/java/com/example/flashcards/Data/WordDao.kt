@@ -5,14 +5,14 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface WordDao {
-    @Query("SELECT * FROM word_table ORDER BY eng_word ASC")
-    fun getAll(): Flow<List<Word>>
+    @Query("SELECT * FROM word_table WHERE login == :login ORDER BY eng_word ASC")
+    fun getAll(login: String): Flow<List<Word>>
 
-    @Query("SELECT * FROM word_table WHERE count_of_learning < 7 ORDER BY eng_word ASC")
-    fun getActiveWords(): Flow<List<Word>>
+    @Query("SELECT * FROM word_table WHERE login == :login AND count_of_learning < 7 ORDER BY eng_word ASC")
+    fun getActiveWords(login: String): Flow<List<Word>>
 
-    @Query("SELECT * FROM word_table WHERE count_of_learning >= 7 ORDER BY eng_word ASC")
-    fun getDisableWords(): Flow<List<Word>>
+    @Query("SELECT * FROM word_table WHERE login == :login AND count_of_learning >= 7 ORDER BY eng_word ASC")
+    fun getDisableWords(login: String): Flow<List<Word>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertWord(vararg words: Word)

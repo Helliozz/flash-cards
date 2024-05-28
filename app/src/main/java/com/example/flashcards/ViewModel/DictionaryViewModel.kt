@@ -7,9 +7,9 @@ import com.example.flashcards.Data.WordRepository
 import kotlinx.coroutines.launch
 
 class DictionaryViewModel(private val repository: WordRepository) : ViewModel() {
-    val words: LiveData<List<Word>> = repository.allWords.asLiveData()
-    val activeWords: LiveData<List<Word>> = repository.activeWords.asLiveData()
-    val disableWords: LiveData<List<Word>> = repository.disableWords.asLiveData()
+    fun words(login:String): LiveData<List<Word>> = repository.allWords(login).asLiveData()
+    fun activeWords(login:String): LiveData<List<Word>> = repository.activeWords(login).asLiveData()
+    fun disableWords(login:String): LiveData<List<Word>> = repository.disableWords(login).asLiveData()
     fun insert(word: Word) = viewModelScope.launch {
         repository.insert(word)
     }

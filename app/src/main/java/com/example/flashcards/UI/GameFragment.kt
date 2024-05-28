@@ -22,13 +22,14 @@ class GameFragment : Fragment() {
 
     private var score = 0
     private var id = 0
-    private val dictionaryViewModel: DictionaryViewModel by viewModels {
-        DictionaryViewModelFactory((activity!!.application as WordsApplication).wordRepository)
-    }
-    private val mainActivityViewModel: MainActivityViewModel by activityViewModels()
     private lateinit var binding: FragmentGameBinding
     private lateinit var words: MutableList<Word>
     private val currentDate = Calendar.getInstance()
+    private val mainActivityViewModel: MainActivityViewModel by activityViewModels()
+    private val dictionaryViewModel: DictionaryViewModel by viewModels {
+        DictionaryViewModelFactory((activity!!.application as WordsApplication).wordRepository)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -37,30 +38,34 @@ class GameFragment : Fragment() {
         binding.right.isEnabled = false
         binding.wrong.isEnabled = false
 
-        dictionaryViewModel.activeWords.observe(this) { wordsDB ->
-            words = wordsDB.shuffled().toMutableList()
-            for (i in wordsDB) {
-                val mCal = Calendar.getInstance()
-                mCal.timeInMillis = i.dateOfLastLearning
-                if ((mCal.get(Calendar.YEAR) == currentDate.get(Calendar.YEAR)) && (mCal.get(
-                        Calendar.MONTH
-                    ) == currentDate.get(Calendar.MONTH)) && (mCal.get(Calendar.DATE) == currentDate.get(
-                        Calendar.DATE
-                    ))
-                ) {
-                    words.remove(i)
+        dictionaryViewModel.activeWords(mainActivityViewModel.getActiveAccount())
+            .observe(this) { wordsDB ->
+                words = wordsDB.shuffled().toMutableList()
+                for (i in wordsDB) {
+                    val mCal = Calendar.getInstance()
+                    mCal.timeInMillis = i.dateOfLastLearning
+                    if ((mCal.get(Calendar.YEAR) == currentDate.get(Calendar.YEAR)) && (mCal.get(
+                            Calendar.MONTH
+                        ) == currentDate.get(Calendar.MONTH)) && (mCal.get(Calendar.DATE) == currentDate.get(
+                            Calendar.DATE
+                        ))
+                    ) {
+                        words.remove(i)
+                    }
                 }
-            }
 
-            if (mainActivityViewModel.setWord(words, id, words.size) == null) {
-                binding.wordCard.isVisible = false
-            } else {
-                binding.rusWord.isVisible = false
-                binding.rusWord.text = mainActivityViewModel.setWord(words, id, words.size)?.rusWord
-                binding.engWord.text = mainActivityViewModel.setWord(words, id, words.size)?.engWord
+                if (mainActivityViewModel.setWord(words, id, words.size) == null) {
+                    binding.wordCard.isVisible = false
+                } else {
+                    binding.rusWord.isVisible = false
+                    binding.rusWord.text =
+                        mainActivityViewModel.setWord(words, id, words.size)?.rusWord
+                    binding.engWord.text =
+                        mainActivityViewModel.setWord(words, id, words.size)?.engWord
+                }
+                dictionaryViewModel.activeWords(mainActivityViewModel.getActiveAccount())
+                    .removeObservers(this)
             }
-            dictionaryViewModel.activeWords.removeObservers(this)
-        }
         return binding.root
     }
 
@@ -105,7 +110,8 @@ class GameFragment : Fragment() {
     }
 
     override fun onDestroy() {
-        dictionaryViewModel.activeWords.removeObservers(activity!!)
+        dictionaryViewModel.activeWords(mainActivityViewModel.getActiveAccount())
+            .removeObservers(activity!!)
         super.onDestroy()
     }
 }

@@ -30,12 +30,12 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#86898C"
         android:textSize="24dp"
-        app:layout_constraintBottom_toTopOf="@id/create_password"
+        app:layout_constraintBottom_toTopOf="@id/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/create_password"
+        android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"

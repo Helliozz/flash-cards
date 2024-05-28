@@ -28,7 +28,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "table",
                     rusWord = "стол",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -36,7 +37,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "chair",
                     rusWord = "стул",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -44,7 +46,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "window",
                     rusWord = "окно",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -52,7 +55,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "door",
                     rusWord = "дверь",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -60,7 +64,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "computer",
                     rusWord = "компьютер",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -68,12 +73,14 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "phone",
                     rusWord = "телефон",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "pen", rusWord = "ручка", countOfLearning = 0, dateOfLastLearning = 0L
+                    engWord = "pen", rusWord = "ручка", countOfLearning = 0, dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -81,12 +88,14 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "pencil",
                     rusWord = "карандаш",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "bag", rusWord = "сумка", countOfLearning = 0, dateOfLastLearning = 0L
+                    engWord = "bag", rusWord = "сумка", countOfLearning = 0, dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -94,7 +103,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "apple",
                     rusWord = "яблоко",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -102,7 +112,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "car",
                     rusWord = "автомобиль",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -110,12 +121,14 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "sun",
                     rusWord = "солнце",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "moon", rusWord = "луна", countOfLearning = 0, dateOfLastLearning = 0L
+                    engWord = "moon", rusWord = "луна", countOfLearning = 0, dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -123,7 +136,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "star",
                     rusWord = "звезда",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -131,7 +145,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "book",
                     rusWord = "книга",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -139,12 +154,14 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "dog",
                     rusWord = "собака",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "cat", rusWord = "кот", countOfLearning = 0, dateOfLastLearning = 0L
+                    engWord = "cat", rusWord = "кот", countOfLearning = 0, dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -152,7 +169,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "mouse",
                     rusWord = "мышь",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -160,12 +178,14 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "bird",
                     rusWord = "птица",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "fish", rusWord = "рыба", countOfLearning = 0, dateOfLastLearning = 0L
+                    engWord = "fish", rusWord = "рыба", countOfLearning = 0, dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -173,7 +193,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "tree",
                     rusWord = "дерево",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -181,7 +202,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "flower",
                     rusWord = "цветок",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -189,12 +211,14 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "river",
                     rusWord = "река",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "sea", rusWord = "море", countOfLearning = 0, dateOfLastLearning = 0L
+                    engWord = "sea", rusWord = "море", countOfLearning = 0, dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -202,7 +226,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "ocean",
                     rusWord = "океан",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -210,12 +235,14 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "mountain",
                     rusWord = "гора",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "hill", rusWord = "холм", countOfLearning = 0, dateOfLastLearning = 0L
+                    engWord = "hill", rusWord = "холм", countOfLearning = 0, dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -223,7 +250,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "valley",
                     rusWord = "долина",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -231,7 +259,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "desert",
                     rusWord = "пустыня",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -239,12 +268,14 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "forest",
                     rusWord = "лес",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "sky", rusWord = "небо", countOfLearning = 0, dateOfLastLearning = 0L
+                    engWord = "sky", rusWord = "небо", countOfLearning = 0, dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -252,7 +283,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "cloud",
                     rusWord = "облако",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -260,12 +292,14 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "rain",
                     rusWord = "дождь",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
                 Word(
-                    engWord = "snow", rusWord = "снег", countOfLearning = 0, dateOfLastLearning = 0L
+                    engWord = "snow", rusWord = "снег", countOfLearning = 0, dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -273,7 +307,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "wind",
                     rusWord = "ветер",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -281,7 +316,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "storm",
                     rusWord = "буря",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
             wordDao.insertWord(
@@ -289,7 +325,8 @@ abstract class WordRoomDatabase : RoomDatabase() {
                     engWord = "thunder",
                     rusWord = "гром",
                     countOfLearning = 0,
-                    dateOfLastLearning = 0L
+                    dateOfLastLearning = 0L,
+                    login = "str@gmail.com"
                 )
             )
         }
@@ -324,6 +361,7 @@ abstract class AccountRoomDatabase : RoomDatabase() {
 
         suspend fun populateDatabase(accountDao: AccountDao) {
             accountDao.deleteAllAccounts()
+            accountDao.insertAccount(Account(email = "str@gmail.com", password = "123"))
         }
     }
 
